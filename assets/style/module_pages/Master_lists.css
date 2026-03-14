@@ -1,0 +1,403 @@
+:root {
+    --primary: #2563eb;
+    --primary-dark: #1e40af;
+    --accent: #3b82f6;
+    --bg-main: #f8fafc;
+    --white: #ffffff;
+    --text-main: #1e293b;
+    --text-muted: #64748b;
+    --danger: #ef4444;
+    --success: #10b981;
+    --warning: #f59e0b;
+    --border: #e2e8f0;
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.12);
+    --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.1);
+    --radius: 12px;
+}
+
+body {
+    font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    margin: 0;
+    padding: 20px;
+}
+
+.main-container {
+    max-width: 1250px;
+    margin: auto;
+    background: var(--white);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--border);
+    overflow: hidden;
+}
+
+
+
+
+/* Header con Efecto Glass */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 30px;
+    background: var(--white);
+    border-bottom: 1px solid var(--border);
+}
+
+
+
+.title-section h1 {
+    font-size: 1.2rem;
+    display: inline;
+    margin-left: 10px;
+}
+
+.content-card {
+    padding: 20px;
+}
+
+
+
+/* Grid de Módulos */
+.modules-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 10px;
+    padding: 20px;
+}
+
+.module-btn {
+    background: #f8f9fa;
+    border: 1px solid #ddd;
+    padding: 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.2s;
+    text-align: center;
+}
+
+.module-btn i {
+    font-size: 1.4rem;
+    color: #555;
+    margin-bottom: 8px;
+    display: block;
+}
+
+.module-btn span {
+    font-size: 0.75rem;
+    font-weight: bold;
+    color: #333;
+}
+
+
+.module-btn.active {
+    background: var(--primary);
+    color: white;
+    border-color: #1a3a70;
+}
+
+.module-btn.active i {
+    color: white;
+}
+
+.status-indicator {
+    font-size: 0.7rem;
+    margin-top: 5px;
+}
+
+.status-indicator.success {
+    color: var(--success);
+}
+
+.status-indicator.danger {
+    color: var(--danger);
+    font-weight: bold;
+}
+
+.table-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 15px 0;
+}
+
+
+
+/* Botones de Acción */
+.btn-agregar {
+    background: var(--primary);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    box-shadow: 0 4px 6px rgba(37, 99, 235, 0.2);
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.btn-agregar:hover {
+    background: var(--primary-dark);
+    transform: scale(1.02);
+    box-shadow: 0 6px 12px rgba(37, 99, 235, 0.3);
+}
+
+
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table th {
+    background: #eee;
+    padding: 10px;
+    text-align: left;
+    border: 1px solid #ddd;
+}
+
+table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+
+/* Botón Regresar Moderno */
+.btn-back {
+    background-color: #64748b;
+    border: 1px solid var(--border);
+    color: #e9e4e4;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-back:hover {
+    background: #f2f3f3;
+    color: var(--text-main);
+    transform: translateX(-3px);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* Estado Activo */
+.module-btn.active {
+    background: var(--primary);
+    border-color: var(--primary);
+    color: white;
+}
+
+.module-btn.active i, 
+.module-btn.active span {
+    color: white;
+}
+
+
+.module-btn:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
+    border-color: var(--accent);
+}  
+
+
+
+
+
+
+/* Indicadores con Pulsación */
+.status-indicator {
+    font-size: 0.7rem;
+    margin-top: 8px;
+    padding: 2px 8px;
+    border-radius: 20px;
+    display: inline-block;
+    background: #f1f5f9;
+    color: var(--text-muted);
+}
+
+.module-btn.active .status-indicator {
+    background: rgba(255,255,255,0.2);
+    color: white;
+}
+
+.status-indicator.success { color: var(--success); font-weight: bold; }
+.status-indicator.danger { color: var(--danger); font-weight: bold; }
+
+
+
+
+/* Tabla */
+.table-container {
+    padding: 0 20px 20px;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+}
+
+table th {
+    background: #343a40;
+    color: white;
+    padding: 12px;
+    text-align: left;
+    font-size: 0.9rem;
+}
+
+table td {
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+    font-size: 0.85rem;
+}
+
+.btn-edit {
+    background: #f1c40f;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+
+/* MODAL */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background: white;
+    width: 400px;
+    margin: 10% auto;
+    border-radius: 8px;
+    overflow: hidden;
+    animation: slideDown 0.3s;
+}
+
+.modal-header {
+    background: var(--primary);
+    color: white;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.close-btn {
+    cursor: pointer;
+    font-size: 24px;
+}
+
+#dynamicForm {
+    padding: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    font-size: 0.9rem;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 94%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.modal-footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    padding-top: 15px;
+}
+
+.btn-guardar {
+    background: var(--success);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btn-cancelar {
+    background: #95a5a6;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.module-btn {
+    animation: fadeInUp 0.4s ease backwards;
+}
+
+/* Retraso escalonado para los botones */
+.module-btn:nth-child(1) { animation-delay: 0.1s; }
+.module-btn:nth-child(2) { animation-delay: 0.15s; }
+.module-btn:nth-child(3) { animation-delay: 0.2s; }
+.module-btn:nth-child(4) { animation-delay: 0.25s; }
+.module-btn:nth-child(5) { animation-delay: 0.3s; }
+.module-btn:nth-child(6) { animation-delay: 0.35s; }
+.module-btn:nth-child(7) { animation-delay: 0.4s; }

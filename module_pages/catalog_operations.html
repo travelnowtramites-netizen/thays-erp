@@ -1,0 +1,88 @@
+<!-- Master_lists.html -->
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>ERP Thays-Postres - Catálogos operación</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+        <link rel="stylesheet" href="../assets/style/module_pages/catalog_operations.css">
+   
+</head>
+<body>
+
+    <div class="main-container">
+        <header class="header">
+            <div class="title-section">
+                <i class="fas fa-boxes"></i>
+                <h1>Panel Configuración | Catálogos de operación</h1>
+            </div>
+            <button class="btn-back" onclick="window.history.back()"><i class="fa-solid fa-chevron-left"></i>
+                Regresar</button>
+        </header>
+
+        <div class="content-card">
+            <h2 class="subtitle">CATÁLOGO DE OPERACIÓN PRINCIPAL (Datos maestros)</h2>
+
+            <div class="modules-grid">
+                <button class="module-btn active" onclick="loadModule('CAT_MATERIA_PRIMA', this)">
+                    <i class="fas fa-mortar-pestle"></i>
+                    <span>MATERIA PRIMA</span>
+                    <div class="status-indicator" id="badge-CAT_MATERIA_PRIMA">Cargando...</div>
+                </button>
+                <button class="module-btn" onclick="loadModule('CAT_PRODUCTOS', this)">
+                    <i class="fas fa-cookie-bite"></i>
+                    <span>CATÁLOGO PRODUCTOS</span>
+                    <div class="status-indicator" id="badge-CAT_PRODUCTOS">Cargando...</div>
+                </button>
+            </div>
+
+            <hr class="divider">
+
+            <div class="table-header">
+                <h3 id="current-table-title">Materia Prima</h3>
+                <button class="btn-agregar" onclick="openModal('add')">
+                    <i class="fas fa-plus-circle"></i> Agregar Nuevo
+                </button>
+            </div>
+
+            <div class="table-container">
+                <table id="master-table">
+                    <thead><tr id="table-head"></tr></thead>
+                    <tbody id="table-body">
+                        <tr><td style="text-align:center;">Cargando registros...</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div id="formModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modalTitle">Nuevo Registro</h2>
+                <span class="close-btn" onclick="closeModal()">&times;</span>
+            </div>
+            <form id="dynamicForm">
+                <div id="formInputs" class="form-grid">
+                    </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn-cancelar" onclick="closeModal()">Cancelar</button>
+                    <button type="submit" class="btn-guardar" id="btnSubmit">Guardar Registro</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="../assets/script/app_boot.js"></script>
+    <script src="../assets/script/module_pages/catalog_operations.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
